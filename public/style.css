@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 400px;
+    max-width: 350px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
@@ -50,4 +50,7 @@ li {
     background-color: #eee;
     margin-bottom: 8px;
     padding: 8px;
+}
+em {
+    font-size: 20px;
 }
