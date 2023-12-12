@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const amount = document.getElementById('amount').value;
         const type = document.getElementById('type').value;
 
-        // Add the transaction to the database
         await fetch('/add', {
             method: 'POST',
             headers: {
@@ -18,19 +17,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             body: `description=${description}&amount=${amount}&type=${type}`,
         });
 
-        // Refresh the transaction list
         refreshTransactionList();
     });
 
-    // Load transactions on page load
     refreshTransactionList();
 
     async function refreshTransactionList() {
-        // Fetch all transactions from the server
         const response = await fetch('/transactions');
         const transactions = await response.json();
 
-        // Display transactions in the list
         transactionList.innerHTML = '';
         transactions.forEach((transaction) => {
             const li = document.createElement('li');

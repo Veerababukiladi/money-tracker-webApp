@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #3333;
 }
 
 .container {
@@ -23,12 +23,16 @@ label {
     margin-bottom: 8px;
 }
 
-input, select, button {
+input, select {
     margin-bottom: 16px;
     padding: 8px;
 }
 
 button {
+    width: 100px;
+    margin-bottom: 10px;
+    padding: 9px;
+    margin-left: 120px;
     background-color: #4941b7;
     color: #fff;
     border: none;
@@ -36,7 +40,8 @@ button {
 }
 
 button:hover {
-    background-color: #35be65;
+    background-color: rgb(26, 154, 9);
+    border-radius: 18px;
 }
 
 ul {
