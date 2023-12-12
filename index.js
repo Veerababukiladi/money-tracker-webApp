@@ -11,7 +11,7 @@ const username=process.env.MONGODB_USERNAME;
 const password=process.env.MONGODB_PASSWORD;
 
 // Connect to MongoDB
-mongoose.connect(`mongodb+srv://${username}:${password}@cluster0.lqkhhhz.mongodb.net/money-tracker-app` /*, { useNewUrlParser: true, useUnifiedTopology: true }*/);
+mongoose.connect(`mongodb+srv://${username}:${password}@cluster0.lqkhhhz.mongodb.net/money-tracker-app`);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
@@ -51,13 +51,11 @@ app.post('/add', async (req, res) => {
 });
 
 app.get('/transactions', async (req, res) => {
-    // Retrieve all transactions from the database
     const transactions = await Transaction.find();
 
     res.json(transactions);
 });
 
-// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
